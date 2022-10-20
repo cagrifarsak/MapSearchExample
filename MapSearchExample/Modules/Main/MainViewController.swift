@@ -23,7 +23,7 @@ class MainViewController: UIViewController {
         title = "Map"
         mapView.delegate = self
         viewModel.delegate = self
-        navigationController?.navigationBar.tintColor = .black
+        navigationController?.navigationBar.tintColor = .systemRed
         view.addSubview(mapView)
     }
     

@@ -16,6 +16,7 @@ class FavoriteViewController: UIViewController {
         table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         return table
     }()
+    private let emptyLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 21))
     
     var favorites: [FavoriteItem] = []
 
@@ -39,6 +40,12 @@ extension FavoriteViewController {
         view.backgroundColor = .clear
         tableview.delegate = self
         tableview.dataSource = self
+        emptyLabel.textColor = .systemRed
+        emptyLabel.center = view.center
+        emptyLabel.textAlignment = .center
+        emptyLabel.text = "You don't have any favorite places."
+        view.addSubview(emptyLabel)
+        emptyLabel.isHidden = !favorites.isEmpty
     }
 }
 
